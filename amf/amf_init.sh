@@ -26,7 +26,7 @@
 # OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-cp /mnt/amf.yaml /open5gs/install/etc/open5gs
+cp /mnt/amf/amf.yaml /open5gs/install/etc/open5gs
 sed -i 's|AMF_IP|'$AMF_IP'|g' /open5gs/install/etc/open5gs/amf.yaml
 sed -i 's|SCP_IP|'$SCP_IP'|g' /open5gs/install/etc/open5gs/amf.yaml
 sed -i 's|NRF_IP|'$NRF_IP'|g' /open5gs/install/etc/open5gs/amf.yaml
