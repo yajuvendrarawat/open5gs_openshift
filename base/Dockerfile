@@ -113,6 +113,12 @@ COPY --from=builder /open5gs/install/etc /open5gs/install/etc
 COPY --from=builder /open5gs/install/include /open5gs/install/include
 COPY --from=builder /open5gs/install/lib /open5gs/install/lib
 COPY --from=builder /open5gs/webui /open5gs/webui
+COPY /mnt/amf/amf.yaml /open5gs/install/etc/open5gs
+RUN sed -i 's|AMF_IP|'$AMF_IP'|g' /open5gs/install/etc/open5gs/amf.yaml
+RUN sed -i 's|SCP_IP|'$SCP_IP'|g' /open5gs/install/etc/open5gs/amf.yaml
+RUN sed -i 's|NRF_IP|'$NRF_IP'|g' /open5gs/install/etc/open5gs/amf.yaml
+RUN sed -i 's|MNC|'$MNC'|g' /open5gs/install/etc/open5gs/amf.yaml
+RUN sed -i 's|MCC|'$MCC'|g' /open5gs/install/etc/open5gs/amf.yaml
 
 # Set the working directory to open5gs
 WORKDIR open5gs
