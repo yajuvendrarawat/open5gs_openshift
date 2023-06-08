@@ -30,15 +30,15 @@ if [[ -z "$COMPONENT_NAME" ]]; then
 	echo "Error: COMPONENT_NAME environment variable not set"; exit 1;
 elif [[ "$COMPONENT_NAME" =~ ^(amf-[[:digit:]]+$) ]]; then
 	echo "Deploying component: '$COMPONENT_NAME'"
-	/amf/amf_init.sh  && \
+	/mnt/amf/amf_init.sh  && \
 	cd install/bin && ./open5gs-amfd
 elif [[ "$COMPONENT_NAME" =~ ^(ausf-[[:digit:]]+$) ]]; then
 	echo "Deploying component: '$COMPONENT_NAME'"
-	/ausf/ausf_init.sh  && \
+	/mnt/ausf/ausf_init.sh  && \
 	cd install/bin && ./open5gs-ausfd
 elif [[ "$COMPONENT_NAME" =~ ^(bsf-[[:digit:]]+$) ]]; then
 	echo "Deploying component: '$COMPONENT_NAME'"
-	/bsf/bsf_init.sh && sleep 10 && \
+	/mnt/bsf/bsf_init.sh && sleep 10 && \
 	cd install/bin && ./open5gs-bsfd
 elif [[ "$COMPONENT_NAME" =~ ^(hss-[[:digit:]]+$) ]]; then
 	echo "Deploying component: '$COMPONENT_NAME'"
