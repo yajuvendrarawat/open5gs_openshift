@@ -127,4 +127,5 @@ COPY ausf /mnt/ausf
 COPY bsf /mnt/bsf
 COPY bsf /mnt/bsf
 COPY base/open5gs_init.sh /
+USER root
 CMD /open5gs_init.sh
